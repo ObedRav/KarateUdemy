@@ -1,16 +1,16 @@
 Feature: Test for the home page
 
-Background:
+  Background:
     * url apiUrl
 
-Scenario: Testing the get all tags
+  Scenario: Testing the get all tags
     Given path 'tags'
     When method GET
     Then status 200
     And match response.tags == '#array'
     And match each response.tags == '#string'
 
-Scenario: Testing the get all articles
+  Scenario: Testing the get all articles
     Given params { limit: 10, offset: 0 }
     And path 'articles'
     When method GET
