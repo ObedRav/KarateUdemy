@@ -41,7 +41,6 @@ Feature: Test for the home page
         }
     """
 
-@testUnique 
   Scenario: Conditional Logic
     Given params { limit: 10, offset: 0 }
     Given path 'articles'
@@ -62,3 +61,23 @@ Feature: Test for the home page
     # * def favCount = response.articles[0].favoritesCount
     # * if (favCount <= 0) karate.fail('favoritesCount should be greater than 0')
     And match response.articles[0].favoritesCount == result
+
+  Scenario: Retry call
+    * configure retry = { count: 2, interval: 5000 }
+
+    Given params { limit: 10, offset: 0 }
+    Given path 'articles'
+    When retry until response.articles[0].favoritesCount >= 1
+    When method GET
+    Then status 200
+
+    @testUnique 
+  Scenario: Sleep call
+    * def sleep = function(pause) { java.lang.Thread.sleep(pause) }
+
+    Given params { limit: 10, offset: 0 }
+    Given path 'articles'
+    * print 'wait for sleep'
+    * eval sleep(5000)
+    When method GET
+    Then status 200
