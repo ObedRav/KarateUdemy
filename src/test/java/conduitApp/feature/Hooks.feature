@@ -1,4 +1,4 @@
-@testUnique @parallel=false
+@parallel=false
 Feature: Hooks
 
   Background: hooks
