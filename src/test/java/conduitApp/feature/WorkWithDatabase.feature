@@ -1,4 +1,4 @@
-@testUnique 
+@dockerignore
 Feature: Work with Database
 
 Background: Connect to Database

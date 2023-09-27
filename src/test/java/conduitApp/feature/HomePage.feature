@@ -40,7 +40,7 @@ Feature: Test for the home page
             }
         }
     """
-
+@dockerignore
   Scenario: Conditional Logic
     Given params { limit: 10, offset: 0 }
     Given path 'articles'
@@ -58,10 +58,14 @@ Feature: Test for the home page
     Given path 'articles'
     When method GET
     Then status 200
+    * def Count = response.articles[0].favoritesCount
     # * def favCount = response.articles[0].favoritesCount
     # * if (favCount <= 0) karate.fail('favoritesCount should be greater than 0')
-    And match response.articles[0].favoritesCount == result
+    * print Count
+    * print result
+    And match Count == result
 
+@dockerignore
   Scenario: Retry call
     * configure retry = { count: 2, interval: 5000 }
 
