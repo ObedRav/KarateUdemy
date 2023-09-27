@@ -14,6 +14,10 @@ import org.apache.commons.io.FileUtils;
 
 class conduitAppTests {
 
+    /**
+     * The testParallel function runs Cucumber tests in parallel with 5 threads and generates a report,
+     * asserting that there are no failures.
+     */
     @Test
     void testParallel() {
         Results results = Runner.path("classpath:conduitApp")
@@ -23,6 +27,13 @@ class conduitAppTests {
         assertTrue(results.getFailCount() == 0, results.getErrorMessages());
     }
 
+    /**
+     * The function generates a report using JSON files from a specified directory and saves it in the
+     * target directory with the name "conduitApp".
+     * 
+     * @param karateOutputPath The karateOutputPath parameter is the path to the directory where the
+     * Karate test execution results in JSON format are stored.
+     */
     public static void generateReport(String karateOutputPath) {
         Collection<File> jsonFiles = FileUtils.listFiles(new File(karateOutputPath), new String[] {"json"}, true);
         List<String> jsonPaths = new ArrayList<>(jsonFiles.size());

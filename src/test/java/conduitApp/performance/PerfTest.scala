@@ -6,6 +6,7 @@ import scala.concurrent.duration._
 
 import conduitApp.performance.createTokens.CreateTokens
 
+// This code is defining a performance test using Gatling and Karate.
 class PerfTest extends Simulation {
 
   CreateTokens.createAccessTokens()
