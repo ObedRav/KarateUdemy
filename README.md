@@ -1,27 +1,29 @@
-# Karate and Gatling API Testing Project
+# Karate and Gatling API Testing Project 🚀
 
 This project was created as part of an Udemy course to learn how to automate API testing using Karate and perform performance testing using Gatling.
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Getting Started](#getting-started)
+1. [Introduction](#introduction) 📚
+2. [Getting Started](#getting-started) 🛠️
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
-   - [Configuration](#configuration)
-3. [Running Tests](#running-tests)
+   - [Configuration](#configuration) ⚙️
+3. [Running Tests](#running-tests) 🏃‍♂️
    - [API Testing with Karate](#api-testing-with-karate)
    - [Performance Testing with Gatling](#performance-testing-with-gatling)
-4. [Test Scenarios](#test-scenarios)
+4. [Test Scenarios](#test-scenarios) 🧪
    - [Articles](#articles)
    - [Home Page](#home-page)
    - [Sign Up User](#sign-up-user)
    - [Work with Database](#work-with-database)
-   - [Hooks](#hooks)
-5. [Configuration Files](#configuration-files)
+   - [Hooks](#hooks) 🪝
+5. [Configuration Files](#configuration-files) 📁
    - [gatling-akka.conf](#gatling-akkaconf)
-6. [Process](#process)
-7. [Authors](#authors)
+6. [Process](#process) 🔄
+7. [Links of Interest](#links-of-interest) 🔗
+8. [Bugs](#bugs) 🐞
+9. [Authors](#authors) 🧑‍💻
 
 ## Introduction
 
@@ -101,6 +103,16 @@ If you want to watch the building process, you can type this in your console
 ```bash
 git log --all --graph --decorate --oneline
 ```
+
+## Links of Interest
+
+- [Cucumber Reporting](https://github.com/damianszczepanik/cucumber-reporting)
+- [Karate](https://github.com/karatelabs/karate/tree/master)
+- [Karate Gatling](https://github.com/karatelabs/karate/tree/master/karate-gatling)
+
+## Bugs
+
+If you find something unusual, please, let me know [Obed Rayo](mailto:rayovianamiltonobed@gmail.com). 📬.
 
 ## Authors
 
