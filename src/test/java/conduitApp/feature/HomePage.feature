@@ -71,7 +71,6 @@ Feature: Test for the home page
     When method GET
     Then status 200
 
-    @testUnique 
   Scenario: Sleep call
     * def sleep = function(pause) { java.lang.Thread.sleep(pause) }
 
@@ -81,3 +80,19 @@ Feature: Test for the home page
     * eval sleep(5000)
     When method GET
     Then status 200
+
+  Scenario: Number to String
+    * def foo = 10
+    * def json = { 'bar': #(foo+'') }
+    * match json == { 'bar': '10' }
+
+    @testUnique 
+  Scenario: String to Number
+    * def foo = '10'
+    * def json = { 'bar': #(foo*1) }
+    # This will be double
+    * def json2 = { 'bar': #(parseInt(foo)) }
+    # This will be integer
+    * def json3 = { 'bar': #(~~parseInt(foo)) }
+    * match json == { 'bar': 10 }
+    * match json2 == { 'bar': 10 }
