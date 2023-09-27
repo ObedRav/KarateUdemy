@@ -86,7 +86,6 @@ Feature: Test for the home page
     * def json = { 'bar': #(foo+'') }
     * match json == { 'bar': '10' }
 
-    @testUnique 
   Scenario: String to Number
     * def foo = '10'
     * def json = { 'bar': #(foo*1) }
